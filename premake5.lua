@@ -7,7 +7,12 @@ project "ImGui"
     targetdir ("%{wks.location}/build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("%{wks.location}/build/obj/" .. outputdir .. "/%{prj.name}")
 
-    includedirs { "." }
+    includedirs {
+        ".",
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.VulkanSDK}"
+    }
+
     externalincludedirs { "." }
 
     files {
